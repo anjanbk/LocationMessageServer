@@ -16,7 +16,8 @@ class GCM {
     public function send_notification($registration_ids, $message) {
         // include config
         include_once './config.php';
- 
+	include_once './ChromePhp.php';
+
         // Set POST variables
         $url = 'https://android.googleapis.com/gcm/send';
  
@@ -29,6 +30,8 @@ class GCM {
             'Authorization: key=' . GOOGLE_API_KEY,
             'Content-Type: application/json'
         );
+
+
         // Open connection
         $ch = curl_init();
  
